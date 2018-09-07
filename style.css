@@ -87,11 +87,11 @@ h1 {
 .data-list {
   list-style: none;
   padding: 0;
-  transform: translateX(23%);
 }
 
 .data-list li {
-  display: block;
+  display: flex;
+  justify-content: center;
   padding: 5px;
 }
 
