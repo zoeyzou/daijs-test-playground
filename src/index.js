@@ -143,6 +143,7 @@ Data.updatePricePeriodically(10000);
 
 Dom.cdpForm.addEventListener('submit', event => {
   event.preventDefault();
+  Dom.dataList.innerHTML = '';
   try {
     const cdpInput = Number(Dom.cdpInput.value);
     Data.updateAndShowCdp(cdpInput);
