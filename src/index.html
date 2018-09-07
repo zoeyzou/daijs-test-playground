@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Dai test page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Poppins|Roboto" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+  <h1>Dai Playground</h1>
+  <div class="main-wrapper">
+    <div class="flex-wrapper">
+      <div class="block">
+        <h3>ETH Price</h3>
+        <div class="loading">
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+        </div>
+        <p class="block-data"></p>
+      </div>
+      <div class="block">
+        <h3>MKR Price</h3>
+        <div class="loading">
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+        </div>
+        <p class="block-data"></p>
+      </div>
+      <div class="block">
+        <h3>PETH Price</h3>
+        <div class="loading">
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+        </div>
+        <p class="block-data"></p>
+      </div>
+      <div class="block">
+        <h3>WETH-PETH Ratio</h3>
+        <div class="loading">
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+        </div>
+        <p class="block-data"></p>
+      </div>
+    </div>
+    <div class="flex-wrapper form-wrapper">
+      <form class="search-wrapper">
+        <!-- <label for="cdp-no">Check your CDP: </label> -->
+        <input type="number" class="cdp-input" min="1" max="3206" placeholder="Search&check a CDP" required>
+        <button class="cdp-button" type="submit">Search</button>
+      </form>
+      <p class="error-message"></p>
+    </div>
+    <div class="wrapper">
+      <ul class="data-list">
+
+      </ul>
+    </div>
+  </div>
+
+  <script src="../dai.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
