@@ -51,7 +51,10 @@ const Data = {
         return promiseList;
       })
       .then(promises => Promise.all(promises))
-      .catch(err => console.log(err));
+      .catch(err => {
+        Dom.errorMessage.innerHTML = err.toString();
+        return;
+      });
   },
 
   updateAndShowPrice: () => {
@@ -63,7 +66,10 @@ const Data = {
           Dom.renderDataBlock(prices);
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        Dom.errorMessage.innerHTML = err.toString();
+        return;
+      });
   },
 
   updatePricePeriodically: (interval) => {
@@ -92,7 +98,10 @@ const Data = {
         return promiseList;
       })
       .then(promises => Promise.all(promises))
-      .catch(err => console.log(err));
+      .catch(err => {
+        Dom.errorMessage.innerHTML = err.toString();
+        return;
+      });
   },
 
   getEthCdpServicePromises: () => {
@@ -106,7 +115,10 @@ const Data = {
         return promiseList;
       })
       .then(promises => Promise.all(promises))
-      .catch(err => console.log(err));
+      .catch(err => {
+        Dom.errorMessage.innerHTML = err.toString();
+        return;
+      });
   },
 
   updateAndShowCdp: (cdpNo) => {
@@ -131,7 +143,10 @@ const Data = {
           });
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        Dom.errorMessage.innerHTML = err.toString();
+        return;
+      });
   }
 };
 
@@ -148,7 +163,7 @@ Dom.cdpForm.addEventListener('submit', event => {
     const cdpInput = Number(Dom.cdpInput.value);
     Data.updateAndShowCdp(cdpInput);
   } catch(error) {
-    Dom.errorMessage.innerHTML = 'CDP number does not exist, please try another one';
+    Dom.errorMessage.innerHTML = error.toString();
   }
 })
 

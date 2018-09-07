@@ -119,6 +119,10 @@ h1 {
   text-align: right;
 }
 
+.error-message {
+  color: lightcoral;
+}
+
 
 
 /* ------------------------------------------------------------
