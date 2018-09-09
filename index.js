@@ -43,12 +43,12 @@ const Data = {
     return maker.authenticate()
       .then(() => maker.service('price'))
       .then(price => {
-        const promiseList = [];
-        promiseList.push(price.getMkrPrice());
-        promiseList.push(price.getEthPrice());
-        promiseList.push(price.getPethPrice());
-        promiseList.push(price.getWethToPethRatio());
-        return promiseList;
+        return [
+          price.getMkrPrice(),
+          price.getEthPrice(),
+          price.getPethPrice(),
+          price.getWethToPethRatio()
+        ];
       })
       .then(promises => Promise.all(promises))
       .catch(err => {
@@ -89,13 +89,13 @@ const Data = {
     return maker.authenticate()
       .then(() => maker.getCdp(cdpNo))
       .then(cdp => {
-        const promiseList = [];
-        promiseList.push(cdp.getDebtValue(Maker.USD));
-        promiseList.push(cdp.getGovernanceFee(Maker.USD));
-        promiseList.push(cdp.getCollateralizationRatio());
-        promiseList.push(cdp.getLiquidationPrice());
-        promiseList.push(cdp.getCollateralValue(Maker.USD));
-        return promiseList;
+        return [
+          cdp.getDebtValue(Maker.USD),
+          cdp.getGovernanceFee(Maker.USD),
+          cdp.getCollateralizationRatio(),
+          cdp.getLiquidationPrice(),
+          cdp.getCollateralValue(Maker.USD)
+        ];
       })
       .then(promises => Promise.all(promises))
       .catch(err => {
@@ -108,11 +108,11 @@ const Data = {
     return maker.authenticate()
       .then(() => maker.service('cdp'))
       .then(ethCdp => {
-        const promiseList = [];
-        promiseList.push(ethCdp.getLiquidationRatio());
-        promiseList.push(ethCdp.getLiquidationPenalty());
-        promiseList.push(ethCdp.getAnnualGovernanceFee());
-        return promiseList;
+        return [
+          ethCdp.getLiquidationRatio(),
+          ethCdp.getLiquidationPenalty(),
+          ethCdp.getAnnualGovernanceFee()
+        ];
       })
       .then(promises => Promise.all(promises))
       .catch(err => {
